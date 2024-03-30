@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["sleep", "3600"]
+    volumeMounts:
+    - name: metrics-volume
+      mountPath: /metrics
+  volumes:
+  - name: metrics-volume
+    persistentVolumeClaim:
+      claimName: myclaim
+
