@@ -84,7 +84,7 @@ The command to push the image is:
 docker push gaurir211/assignment:017
 ```
 
-The image is now ready to  be used. We will use it in our cronJob yaml file.
+The image is now ready to  be used. We will use it in our cronJob yaml file. The final image that I used: gaurir211/assignment:017
 ## Step 6: Create persistent volume and persistent volume claims
 We need to Treat the output files generated as essential and should be retained on pod restarts. So we will do this with the help of persistent volume and persistent volume claims
 
@@ -94,7 +94,7 @@ kubectl apply -f mypvc.yaml
 ```
 ## Step 7: Create cron Job yaml
 
-Create the CronJob.yaml and deply it on the kubernetes cluster.
+Create the CronJob.yaml and deply it on the kubernetes cluster. The command used:
 ```bash
 kubectl apply -f cron.yaml
 ```
@@ -106,7 +106,9 @@ Hour (0-23)
 Day of the month (1-31)
 Month (1-12 or names, e.g., January, February)
 Day of the week (0-7 or names, 0 and 7 both represent Sunday)
+
 b. In our case we are running the cron every minute.
+
 c. Use the correct Persistent volume claim.
 
 
@@ -114,22 +116,22 @@ c. Use the correct Persistent volume claim.
 
 I am creating another pod to access the volume mounted by cron job. We can achieve this using the same Persistent volume claim as is used by the cronjob. We will be able to exec to the pod and test the volume folder and files created. 
 
-Command to deploy the pod:
+The command to deploy the pod:
 ```bash
 kubectl apply -f accesspod.yaml
 ```
 
-command to exec into the pod:
+The command to exec into the pod:
 ```bash
 kubectl exec -it busybox -- sh
 ```
 
-command to Verify cron files:
+The command to Verify cron files:
 ```bash
 cd /metrics
 ls -l
 ```
 ## Step 9: Challenges:
 
-Deploying  the node exporter. I used traditional method at first and then came up with daemonset and service idea.
+Deploying the node exporter. I used traditional method at first and then came up with daemonset and service idea.
 
