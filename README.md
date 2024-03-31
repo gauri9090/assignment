@@ -54,7 +54,7 @@ Note: Make sure that the daemonset and service are deployed in the correct names
 ## Step 3: Create bash file
 
 I tried to create a bashfile and execute it on local machine first. When it was successful I used it in a dockerfile.
-Command to run the bashscript:
+The command to run the bashscript:
 ```bash
 "./getMetricsScript.sh"
 ```
@@ -90,7 +90,7 @@ We need to Treat the output files generated as essential and should be retained 
 
 ```bash
 kubectl apply -f mypv.yaml
-kubectl apply -f mypvc.yaml
+kubectl apply -f my-pvc.yaml
 ```
 ## Step 7: Create cron Job yaml
 
