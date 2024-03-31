@@ -26,9 +26,12 @@ The first step is to create a minikube cluster using  the following commands :
 ```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+```
 
 Command to start the cluster :
+```bash
 minikube start
+```
 
 Next step is to use kubectl. We can install kubectl or Alternatively, minikube can download the appropriate 
 version of kubectl and we should be able to use it like this:
