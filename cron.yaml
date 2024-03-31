@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: metrics-collector
-            image: gaurir211/assignment:01
+            image: gaurir211/assignment:017
             imagePullPolicy: IfNotPresent
             volumeMounts:
             - name: metrics-volume
